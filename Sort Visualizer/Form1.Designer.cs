@@ -38,6 +38,9 @@
             tmr_delay = new System.Windows.Forms.Timer(components);
             btn_Sort = new Button();
             cbx_algs = new ComboBox();
+            lb_swaps = new Label();
+            lb_comps = new Label();
+            lb_rewrite = new Label();
             SuspendLayout();
             // 
             // btn_rng
@@ -68,7 +71,7 @@
             cbx_noi.Name = "cbx_noi";
             cbx_noi.Size = new Size(230, 33);
             cbx_noi.TabIndex = 2;
-            cbx_noi.Text = "64";
+            cbx_noi.Text = "32";
             // 
             // btn_numberOfItems
             // 
@@ -100,7 +103,7 @@
             cbx_delay.Name = "cbx_delay";
             cbx_delay.Size = new Size(230, 33);
             cbx_delay.TabIndex = 4;
-            cbx_delay.Text = "50";
+            cbx_delay.Text = "20";
             // 
             // tmr_delay
             // 
@@ -120,18 +123,48 @@
             // cbx_algs
             // 
             cbx_algs.FormattingEnabled = true;
-            cbx_algs.Items.AddRange(new object[] { "Bubble Sort" });
+            cbx_algs.Items.AddRange(new object[] { "Bubble Sort", "Selection Sort", "Insertion Sort" });
             cbx_algs.Location = new Point(1136, 496);
             cbx_algs.Name = "cbx_algs";
             cbx_algs.Size = new Size(230, 33);
             cbx_algs.TabIndex = 7;
             cbx_algs.Text = "Bubble Sort";
             // 
+            // lb_swaps
+            // 
+            lb_swaps.AutoSize = true;
+            lb_swaps.Location = new Point(1136, 639);
+            lb_swaps.Name = "lb_swaps";
+            lb_swaps.Size = new Size(82, 25);
+            lb_swaps.TabIndex = 9;
+            lb_swaps.Text = "Swaps: 0";
+            // 
+            // lb_comps
+            // 
+            lb_comps.AutoSize = true;
+            lb_comps.Location = new Point(1136, 614);
+            lb_comps.Name = "lb_comps";
+            lb_comps.Size = new Size(136, 25);
+            lb_comps.TabIndex = 10;
+            lb_comps.Text = "Comparisons: 0";
+            // 
+            // lb_rewrite
+            // 
+            lb_rewrite.AutoSize = true;
+            lb_rewrite.Location = new Point(1136, 664);
+            lb_rewrite.Name = "lb_rewrite";
+            lb_rewrite.Size = new Size(96, 25);
+            lb_rewrite.TabIndex = 11;
+            lb_rewrite.Text = "Rewrites: 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1378, 1099);
+            Controls.Add(lb_rewrite);
+            Controls.Add(lb_comps);
+            Controls.Add(lb_swaps);
             Controls.Add(btn_Sort);
             Controls.Add(cbx_algs);
             Controls.Add(btn_delayChange);
@@ -145,6 +178,7 @@
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -158,5 +192,8 @@
         private System.Windows.Forms.Timer tmr_delay;
         private Button btn_Sort;
         private ComboBox cbx_algs;
+        private Label lb_swaps;
+        private Label lb_comps;
+        private Label lb_rewrite;
     }
 }
